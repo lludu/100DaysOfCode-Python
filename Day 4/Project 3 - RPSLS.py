@@ -1,4 +1,4 @@
-#This is day 4 project: Rock Paper Scissors (Added Lizard Spock for more funsies)
+#This is day 4 project: Rock Paper Scissors (Added Lizard Spock for more funsies) 
 #also added defined a function and ran it (before we were supposed to in our 100 days, but shhh dont tell)
 
 
