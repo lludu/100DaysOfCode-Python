@@ -13,7 +13,7 @@ while new_auction:
 
   #Ask what we are bidding on
   print(logo)
-  print('Welcome to the Silent Auction Program.')
+  print('Welcome to the Blind Auction Program.')
   item = input("What is the item up for bid?: ")
   show_bidders = input("\nShould we disclose all bids at the end of the auction?\nType 'yes' or 'no': ").lower()
   clear()
@@ -22,7 +22,7 @@ while new_auction:
   while auction_running:
     #Print Welcome Screen
     print(logo)
-    print('Welcome to the Silent Auction Program.')
+    print('Welcome to the Blind Auction Program.')
     print(f'We are currently bidding on: {item}')
     if show_bidders == 'yes' or show_bidders == 'y':
       print('Bids will be disclosed at the end\n')
