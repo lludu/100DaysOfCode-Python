@@ -1,4 +1,4 @@
-#This is day 10 project: Basic Calculator
+#This is day 11 project: BlackJack
 
 #import modules
 from replit import clear #clears the screen for gameplay, code only used on replit.com
