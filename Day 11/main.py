@@ -1,16 +1,26 @@
 #import modules
-from replit import clear #clears the screen for gameplay, code only used on replit.com
+
+#Importing clear from Replit.com
+try:
+    from replit import clear #clears the screen for gameplay, code only used on replit.com
+except ModuleNotFoundError:
+    # Error handling
+    none_replit = True
+    pass
+
+#Import other modules
 from art import logo
 import random
-
 #determine OS, just for funsies, to determine start button for game
 import platform
 os_type = platform.system()
 
-
 #clear function
 def wipe():
-  clear()
+  if not none_replit:
+    clear()
+  else:
+    print('\n'*100)
   print(logo)
 
 
@@ -18,7 +28,9 @@ def wipe():
 play_game = True
 print(logo)
 if os_type == "Windows" or os_type == "Linux":
+  print(f"You are using a {os_type} machine.")
   input("Press [Enter] to begin playing BlackJack.\n")
+
 else:
   input("Press [Return] to begin playing BlackJack.\n")
 wipe()
