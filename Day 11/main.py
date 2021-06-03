@@ -3,9 +3,10 @@
 #Importing clear from Replit.com
 try:
     from replit import clear #clears the screen for gameplay, code only used on replit.com
+    not_replit = False
 except ModuleNotFoundError:
     # Error handling
-    none_replit = True
+    not_replit = True
     pass
 
 #Import other modules
@@ -17,18 +18,18 @@ os_type = platform.system()
 
 #clear function
 def wipe():
-  if not none_replit:
-    clear()
-  else:
+  if not_replit:
     print('\n'*100)
+  else:
+    clear()
   print(logo)
 
 
 #Initial Screen
 play_game = True
+print(f"You are using a {os_type} machine.")
 print(logo)
 if os_type == "Windows" or os_type == "Linux":
-  print(f"You are using a {os_type} machine.")
   input("Press [Enter] to begin playing BlackJack.\n")
 
 else:
