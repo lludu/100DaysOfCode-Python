@@ -1,0 +1,32 @@
+Structure:
+
+(logo)
+----> if correct: "You're right! Current score: {score}"
+-br-
+"Compare A: {Name}, {Job}, {Country}."
+-br-
+(Vs)
+-br-
+"Against B: {Name}, {Job}, {Country}."
+-br-
+"Who has more instagram followers? Type 'A' or 'B': "
+
+on incorrect:
+(logo)
+"Sorry, that's wrong. Final score: {score}"
+
+1. import random module and replit clear module / function called "wipe"
+
+2. generate random choice for both A and b
+
+3. ask user for input
+
+4. compare answers
+
+5. explain yes or no
+
+6. create a loop
+
+7. set loop flag
+
+8. create replay loop
