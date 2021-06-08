@@ -68,17 +68,6 @@ def make_drink():
 
 
 
-
-
-    # if resources["water"] > drink["ingredients"]["water"] and resources["milk"] > drink["ingredients"]["milk"] and resources["coffee"] > drink["ingredients"]["coffee"]:
-    #     resources["water"] -= drink["ingredients"]["water"]
-    #     resources["milk"] -= drink["ingredients"]["milk"]
-    #     resources["coffee"] -= drink["ingredients"]["coffee"]
-    #     return True
-    # else:
-    #     print("Sorry, we dont know have enough ingredients to make that!")
-    #     return False
-
 while is_on:
     wipe()
     choice = input("What would you like? (Espresso, Latte, or Cappuccino): ").lower()
