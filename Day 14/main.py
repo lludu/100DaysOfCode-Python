@@ -113,14 +113,17 @@ while play_game:
 
 
         #Check to see if user is continuing to play the game
-        if correct and score > 10 and chosen['name'] == data[0]["name"]:
-            print('\n🤣  😅   You have reached the max level for this game!🤣  😅')
-            game_over = True
-        elif correct and score > 99:
+
+        #Use this code if using a "Sticky Level A (see below)"
+        # if correct and score > 10 and chosen['name'] == data[0]["name"]:
+        #     print('\n🤣  😅   You have reached the max level for this game!🤣  😅')
+        #     game_over = True
+        if correct and score > 99:
             print('\nYou won level 💯 , you should take a break now! Goodbye!')
             game_over = True
         elif correct:
-            a = chosen
+            # a = chosen #Keeps a sticky level A answer
+            a = b #sets B choice as the new A
         else:
             game_over = True
 
