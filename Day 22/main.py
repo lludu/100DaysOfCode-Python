@@ -51,6 +51,8 @@ while game_on:
     if ball.distance(r_paddle) < 50 and ball.xcor() > 320 or ball.distance(l_paddle) < 50 and ball.xcor() < -320:
         ball.x_bounce()
 
+    # if (xcor() > 250 and ball.is_moving_right()) or (xcor() < -250 and ball.is_moving_left()): detect_paddle()
+
 
 
     # <--------------  Detect Right Paddle Miss (Points) -------------> #
