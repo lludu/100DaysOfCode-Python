@@ -5,31 +5,26 @@ from turtle import Screen, Turtle
 from snake import Snake
 import time
 
-
 # Screen Setup
 screen = Screen()
 screen.setup(width=600, height=600)
 screen.colormode(255)  # To Use RGB Background Colors
 # screen.bgcolor(13,16,30)  # Replit Blue
-screen.bgcolor(34,34,34)  # 222 Grey
+screen.bgcolor(34, 34, 34)  # 222 Grey
 screen.title("Py Snake Game")
-screen.tracer(0) # Stop displacing animations until you need, no jittering
+screen.tracer(0)  # Stop displacing animations until you need, no jittering
 
-
-#TODO 1. Create the snake Body - Completed in snake.py
-    #turtles are 20x20 pixels
-    #poisition at 0x0, 0x20, 0x40
+# TODO 1. Create the snake Body - Completed in snake.py
+# turtles are 20x20 pixels
+# poisition at 0x0, 0x20, 0x40
 snake = Snake()
 
-#TODO 2. Move the snake - Completed in snake.py
+# TODO 2. Move the snake - Completed in snake.py
 screen.listen()
 screen.onkey(snake.up, "Up")
 screen.onkey(snake.down, "Down")
 screen.onkey(snake.left, "Left")
 screen.onkey(snake.right, "Right")
-
-
-
 
 game_on = True
 while game_on:
@@ -38,35 +33,11 @@ while game_on:
 
     snake.move()
 
-
-
-#TODO 3. Create snake food
-#TODO 4. Detect collision with food
-#TODO 5. Create a scoreboard
-#TODO 6. Detect collision with wall
-#TODO 7. Detect collision with tail
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# TODO 3. Create snake food
+# TODO 4. Detect collision with food
+# TODO 5. Create a scoreboard
+# TODO 6. Detect collision with wall
+# TODO 7. Detect collision with tail
 
 
 screen.exitonclick()
-

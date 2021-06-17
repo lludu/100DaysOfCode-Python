@@ -1,6 +1,6 @@
 from turtle import Turtle
 
-STARTING_POSITIONS = [(0,0), (-20,0), (-40,0)]
+STARTING_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
 MOVE_DISTANCE = 20
 UP = 90
 DOWN = 270
@@ -17,17 +17,18 @@ SNAKE_BODY = COLOR_GREEN
 SNAKE_HEAD = COLOR_SNAKE_GREEN
 BODY_SHAPE = "square"  # “arrow”, “turtle”, “circle”, “square”, “triangle”, “classic”
 
+
 class Snake:
 
     def __init__(self):
         self.segments = []
-        self.create_snake() # Create Snake Method
+        self.create_snake()  # Create Snake Method
         self.head = self.segments[0]
 
     def create_snake(self):
         for position in STARTING_POSITIONS:
             new_segments = Turtle(shape=BODY_SHAPE)
-            new_segments.color(SNAKE_BODY) # BODY COLOR BASED ON VARIABLE
+            new_segments.color(SNAKE_BODY)  # BODY COLOR BASED ON VARIABLE
             new_segments.penup()
             new_segments.speed(1)
             new_segments.goto(position)
