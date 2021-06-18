@@ -30,22 +30,28 @@ center_y = int(screen_height/2 - window_height / 2)
 window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
 def calculate():
-    # 1 mile = 1.60934 km
-    miles = int(miles_input.get())
-    km = round((miles * 1.60934),2)
-    converted_number.config(text=km)
+    if listbox.get(listbox.curselection()) == "Miles":
+        miles = float(distance_input.get())
+        km = round((miles * 1.60934), 2)
+        dist_label.config(text="Km")
+        converted_number.config(text=km)
+    elif listbox.get(listbox.curselection()) == "Km":
+        km = float(distance_input.get())
+        miles = round((km / 1.60934), 2)
+        converted_number.config(text=miles)
+        dist_label.config(text="Miles")
+    else:
+        converted_number.config(text="0")
 
 
 
+dist_label = Label(text="", font=("Georgia", 16), fg="#222", bg='whitesmoke')
+dist_label.grid(row=1, column=2)
+dist_label.config(padx=5, pady=5)
 
-miles_input = Entry(width="5", font=("Georgia", 16))
-miles_input.grid(row=0, column=1)
+distance_input = Entry(width="5", font=("Georgia", 16))
+distance_input.grid(row=0, column=1)
 
-
-
-miles_label = Label(text="Miles", font=("Georgia", 16), fg="#222", bg='whitesmoke')
-miles_label.grid(row=0, column=2)
-miles_label.config(padx=5, pady=5)
 
 equal_label = Label(text="is equal to", font=("Georgia", 16), fg="#222", bg='whitesmoke')
 equal_label.grid(row=1, column=0)
@@ -55,14 +61,19 @@ converted_number = Label(text="0", font=("Georgia", 16), fg="#222", bg='whitesmo
 converted_number.grid(row=1, column=1)
 converted_number.config(padx=5, pady=5)
 
-km_label = Label(text="km", font=("Georgia", 16), fg="#222", bg='whitesmoke')
-km_label.grid(row=1, column=2)
-km_label.config(padx=5, pady=5)
+
 
 calc_button = Button(text="Calculate", command=calculate, font=("Georgia", 10), fg="#222", bg='whitesmoke')
 calc_button.grid(row=2, column=1)
 calc_button.config(padx=5, pady=5)
 
+
+listbox = Listbox(height=2)
+listbox.grid(row=0, column=2)
+distances = ["Miles", "Km"]
+for item in distances:
+    listbox.insert(distances.index(item), item)
+listbox.bind("<<ListboxSelect>>")
 
 
 
