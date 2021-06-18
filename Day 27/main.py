@@ -19,7 +19,7 @@ window.wm_attributes('-transparentcolor','brown') # ALL "BROWN" colors will be t
 
 # ---------- Center the TK window ---------- #
 window_width = 300
-window_height = 200
+window_height = 150
 # get the screen dimension
 screen_width = window.winfo_screenwidth()
 screen_height = window.winfo_screenheight()
@@ -30,19 +30,34 @@ center_y = int(screen_height/2 - window_height / 2)
 window.geometry(f'{window_width}x{window_height}+{center_x}+{center_y}')
 
 def calculate():
-    if listbox.get(listbox.curselection()) == "Miles":
+    # --------------LIST BOX PICKER-------------------#
+    # if listbox.get(listbox.curselection()) == "Miles":
+    #     miles = float(distance_input.get())
+    #     km = round((miles * 1.60934), 2)
+    #     dist_label.config(text="Km")
+    #     converted_number.config(text=km)
+    # elif listbox.get(listbox.curselection()) == "Km":
+    #     km = float(distance_input.get())
+    #     miles = round((km / 1.60934), 2)
+    #     converted_number.config(text=miles)
+    #     dist_label.config(text="Miles")
+    # else:
+    #     converted_number.config(text="0")
+
+    # --------------RADIO BUTTON PICKER-------------------#
+    if radio_state.get() == 1:
         miles = float(distance_input.get())
         km = round((miles * 1.60934), 2)
         dist_label.config(text="Km")
+        print(f'{miles} miles is {km} km')
         converted_number.config(text=km)
-    elif listbox.get(listbox.curselection()) == "Km":
+    elif radio_state.get() == 2:
         km = float(distance_input.get())
         miles = round((km / 1.60934), 2)
         converted_number.config(text=miles)
+        print(f'{km} km is {miles} miles')
         dist_label.config(text="Miles")
-    else:
-        converted_number.config(text="0")
-
+    # pass
 
 
 dist_label = Label(text="", font=("Georgia", 16), fg="#222", bg='whitesmoke')
@@ -50,7 +65,7 @@ dist_label.grid(row=1, column=2)
 dist_label.config(padx=5, pady=5)
 
 distance_input = Entry(width="5", font=("Georgia", 16))
-distance_input.grid(row=0, column=1)
+distance_input.grid(row=0, column=0)
 
 
 equal_label = Label(text="is equal to", font=("Georgia", 16), fg="#222", bg='whitesmoke')
@@ -68,13 +83,25 @@ calc_button.grid(row=2, column=1)
 calc_button.config(padx=5, pady=5)
 
 
-listbox = Listbox(height=2)
-listbox.grid(row=0, column=2)
-distances = ["Miles", "Km"]
-for item in distances:
-    listbox.insert(distances.index(item), item)
-listbox.bind("<<ListboxSelect>>")
+# listbox = Listbox(height=2)
+# listbox.grid(row=0, column=2)
+# distances = ["Miles", "Km"]
+# for item in distances:
+#     listbox.insert(distances.index(item), item)
+# listbox.bind("<<ListboxSelect>>")
 
+#Radiobutton
+def radio_used():
+    if radio_state.get() == 1:
+        print("Miles")
+    else:
+        print("Km")
+#Variable to hold on to which radio button value is checked.
+radio_state = IntVar()
+radiobutton1 = Radiobutton(text="Miles", value=1, variable=radio_state, command=radio_used)
+radiobutton2 = Radiobutton(text="Km", value=2, variable=radio_state, command=radio_used)
+radiobutton1.grid(row=0, column=1)
+radiobutton2.grid(row=0, column=2)
 
 
 
