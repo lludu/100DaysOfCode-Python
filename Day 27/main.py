@@ -9,7 +9,7 @@ from tkinter import *
 # ---------- Create the TK window ---------- #
 window = Tk()
 window.title("Mile to Km Converter")
-# window.resizable(width=False,height=False)  # can the window be resized
+window.resizable(width=False,height=False)  # can the window be resized
 window.iconbitmap('calc.ico') # change the default icons -> fontawesome svg converted to ico :D
 window.configure(bg='whitesmoke', padx=20, pady=20)
 window.wm_attributes('-transparentcolor','brown') # ALL "BROWN" colors will be transparent
