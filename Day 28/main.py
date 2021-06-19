@@ -38,6 +38,7 @@ def reset_timer():
     check_marks.config(text="")
     REPS = 0
     to_work()
+    start_btn.config(state=NORMAL)
 
 
 
@@ -88,6 +89,7 @@ def count_down(count):
     if count_min < 10:
         count_min = f"0{count_min}"
 
+    start_btn.config(state=DISABLED)
 
     # if len(str(count_min)) == 1:
     #     count_min = str(count_min)
