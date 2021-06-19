@@ -7,3 +7,6 @@ output/
 *.zip
 *todo.py
 *.psd
+main.build/
+*.dll
+*.exe
