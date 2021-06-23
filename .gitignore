@@ -10,3 +10,6 @@ output/
 main.build/
 *.dll
 *.exe
+*.json
+Day 32/main.py
+Day 32/Exercise/
