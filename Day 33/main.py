@@ -7,18 +7,10 @@ import smtplib
 #  Email SMPT Documentation  #  https://docs.python.org/3/library/smtplib.html
 import time
 from password import *
-
-
-# # -------------------- GLOBALS -------------------- #
-MY_LAT = 39.872620
-MY_LNG = -76.228637
-MY_EMAIL = "andrewjash.py@outlook.com"
-MY_EMAIL_CONNECTION = "outlook.office365.com"
-
+#  Data file including MY_LAT, MY_LNG, MY_EMAIL, MY_EMAIL_CONNECTION, E_PASS, RECEIVING_EMAIL, and KEY (API Key for DST Website)
 
 
 # # -------------------- DAYLIGHT SAVINGS TIME Data from the https://app.abstractapi.com/api/timezone/tester -------------------- #
-KEY = "69ed12f621854407a7fa9bbcd80a8d24"
 response = requests.get(f"https://timezone.abstractapi.com/v1/current_time/?api_key={KEY}&location={MY_LAT},{MY_LNG}")
 DST_CHECKER = response.json()["is_dst"] # Returns boolean true, false if currently daylightsavings
 GMT_OFFSET = response.json()["gmt_offset"] # Timezone's offset from Greenwich Mean Time (GMT).
@@ -52,12 +44,12 @@ def email():
         connection.login(user=MY_EMAIL, password=E_PASS)
         if get_position() and is_night():
             connection.sendmail(from_addr=MY_EMAIL,
-                            to_addrs="lludu@Live.com",
+                            to_addrs=RECEIVING_EMAIL,
                             msg="Subject:ISS in Visible Range!\n\n"
                                 f"Look Up, the ISS is above you, you can see it")
         else:
             connection.sendmail(from_addr=MY_EMAIL,
-                                to_addrs="lludu@Live.com",
+                                to_addrs=RECEIVING_EMAIL,
                                 msg="Subject:ISS Not in Visible Range!\n\n"
                                     f"It is not in range, you cannot view it now")
         print("Msg Sent")
@@ -113,6 +105,3 @@ while True:
         print("Yes, it is above you, you can see it")
     else:
         print("No, You cannot see it")
-
-
-
