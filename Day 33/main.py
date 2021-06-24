@@ -42,16 +42,10 @@ def email():
     with smtplib.SMTP(MY_EMAIL_CONNECTION) as connection:
         connection.starttls()  # secure the email connection
         connection.login(user=MY_EMAIL, password=E_PASS)
-        if get_position() and is_night():
-            connection.sendmail(from_addr=MY_EMAIL,
-                            to_addrs=RECEIVING_EMAIL,
-                            msg="Subject:ISS in Visible Range!\n\n"
-                                f"Look Up, the ISS is above you, you can see it")
-        else:
-            connection.sendmail(from_addr=MY_EMAIL,
-                                to_addrs=RECEIVING_EMAIL,
-                                msg="Subject:ISS Not in Visible Range!\n\n"
-                                    f"It is not in range, you cannot view it now")
+        connection.sendmail(from_addr=MY_EMAIL,
+                        to_addrs=RECEIVING_EMAIL,
+                        msg="Subject:ISS in Visible Range!\n\n"
+                        f"Look Up, the ISS is above you, you can see it")
         print("Msg Sent")
 
 # # -------------------- Sunrise Sunset API https://sunrise-sunset.org/api -------------------- #
