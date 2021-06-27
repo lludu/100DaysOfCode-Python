@@ -12,7 +12,7 @@ auth_token = TWILIO_AUTH_TOKEN
 weather_parameters = {
         "lat": LAT,
         "lon": LON,
-        "appid": API_KEY,
+        "appid": OWM_API_KEY,
         "exclude": "current,minutely,daily"
     }
 
