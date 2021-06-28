@@ -3,6 +3,9 @@
 # Pixela API Documentation: https://docs.pixe.la/
 # API Request Module Documentation: https://docs.python-requests.org/en/latest/api/
 
+# --- Check out the Peloton Chart Here --- #
+# https://pixe.la/v1/users/andrewjash/graphs/peloton1.html
+
 # --- Modules --- #
 import requests
 from p_data import *
