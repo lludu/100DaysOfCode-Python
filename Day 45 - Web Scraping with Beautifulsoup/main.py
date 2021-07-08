@@ -30,6 +30,7 @@ def read_web_file():
 soup = read_web_file()
 
 
+soup.find_all(name="h3", class_="jsx-4245974604")
 # --- Inspect webpage for Title and number of movie ----#
 # --- Using inspect on a title of a movie on the website, they appear to be inside of h3 tags --- #
 # --- Lets create a list of all the h3 tags with a jsx-4245974604 class --- #
@@ -48,7 +49,7 @@ movies = movie_list[::-1]
 print(movies)
 
 
-# --- Write List into a text file ----#
-with open("data/movies.txt", mode="w") as file:
-    for movie in movies:
-        file.write(f"{movie}\n")
+# # --- Write List into a text file ----#
+# with open("data/movies.txt", mode="w") as file:
+#     for movie in movies:
+#         file.write(f"{movie}\n")
