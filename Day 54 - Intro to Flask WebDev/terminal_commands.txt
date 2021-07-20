@@ -1,0 +1,7 @@
+pwd = prints working directory "/c/Users/lludu/Documents/CodingWork/Portfolio/100DaysOfCode -Python/Day 54 - Intro to Flask WebDev"
+ls = list directory
+cd = change directory
+mkdir = make directory (folder)  "mkdir Test_Folder"
+touch = make file  "touch main.py"
+rm = remove file (delete)   "rm main.py"
+rm -rf = Recurse, Force Remove Folder  "fm -rf Test_Folder"
